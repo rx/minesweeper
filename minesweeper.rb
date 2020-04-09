@@ -42,9 +42,7 @@ class Minesweeper
   def play
     loop do
       input = STDIN.gets.chomp
-      command, *params = input.split /\s/
-      x = params[0]
-      y = params[1]
+      command, x, y = input.split /\s/
       case command.downcase
         when 'open', 'o'
           c = game.cell(x, y)
